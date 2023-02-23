@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { SingleArticle } from "./components/SingleArticle";
 import { NotFound } from "./components/NotFound";
-import { CustomNav } from "./components/CustomNav.";
+import { CustomNav } from "./components/CustomNav";
 
 function App() {
   return (

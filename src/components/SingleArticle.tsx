@@ -19,7 +19,7 @@ export const SingleArticle = () => {
       const res = await fetch(baseURL);
       if (res.ok) {
         const articleFromAPI = await res.json();
-        console.log(articleFromAPI);
+        // console.log(articleFromAPI);
         setArticle(articleFromAPI);
       } else {
         console.log("Error while fetching content");
@@ -33,33 +33,39 @@ export const SingleArticle = () => {
   };
 
   return (
-    <div
-      className="d-flex flex-column align-items-center"
-      style={{
-        backgroundImage: `url(${article?.imageUrl})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <Container className="bg-light mt-6 rounded">
-        <Col xs={12}>
-          <h1 className="my-3">{article?.title}</h1>
-        </Col>
+    <>
+      {article ? (
+        <div
+          className="d-flex flex-column align-items-center"
+          style={{
+            backgroundImage: `url(${article.imageUrl})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "100vh",
+          }}
+        >
+          <Container className="bg-light mt-6 rounded">
+            <Col xs={12}>
+              <h1 className="my-3">{article.title}</h1>
+            </Col>
 
-        <Col xs={12} className="fs-3">
-          <p className="mb-3">{article?.summary}</p>
-        </Col>
-        <Col xs={12} className="fs-4">
-          <p className="mb-3 fst-italic text-muted">
-            {article?.newsSite} - {article?.publishedAt.slice(0, 10)}
-          </p>
-        </Col>
-        <Button href={article?.url} className="mb-2" variant="success">
-          To Article
-        </Button>
-      </Container>
-    </div>
+            <Col xs={12} className="fs-3">
+              <p className="mb-3">{article.summary}</p>
+            </Col>
+            <Col xs={12} className="fs-4">
+              <p className="mb-3 fst-italic text-muted">
+                {article.newsSite} - {article.publishedAt.slice(0, 10)}
+              </p>
+            </Col>
+            <Button href={article.url} className="mb-2" variant="success">
+              To Article
+            </Button>
+          </Container>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
