@@ -8,7 +8,7 @@ interface ArticleComponentProps {
 
 export const ArticleComponent = ({ article }: ArticleComponentProps) => {
   return (
-    <Col xs={12} md={6} className="mt-4">
+    <Col xs={12} md={6} className="mb-4">
       <Card>
         <Card.Img
           variant="top"

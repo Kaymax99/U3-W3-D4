@@ -11,6 +11,7 @@ export const SingleArticle = () => {
 
   useEffect(() => {
     fetchArticle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchArticle = async () => {
@@ -42,7 +43,7 @@ export const SingleArticle = () => {
         minHeight: "100vh",
       }}
     >
-      <Container className="bg-light mt-5 rounded">
+      <Container className="bg-light mt-6 rounded">
         <Col xs={12}>
           <h1 className="my-3">{article?.title}</h1>
         </Col>

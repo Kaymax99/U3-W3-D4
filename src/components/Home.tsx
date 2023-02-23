@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { IArticle } from "../interfaces/IArticle";
 import { ArticleComponent } from "./ArticleComponent";
@@ -30,7 +30,7 @@ export const Home = () => {
   };
 
   return (
-    <Container>
+    <Container className="mt-6">
       <Row>
         {articlesList.map((article, i) => {
           return <ArticleComponent key={"article-" + i} article={article} />;

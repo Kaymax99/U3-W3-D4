@@ -13,3 +13,7 @@
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+
+.mt-6 {
+  margin-top: 5em;
+}
